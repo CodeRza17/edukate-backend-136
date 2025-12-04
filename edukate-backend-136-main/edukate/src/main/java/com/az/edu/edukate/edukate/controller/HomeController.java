@@ -1,9 +1,10 @@
 package com.az.edu.edukate.edukate.controller;
 
 import com.az.edu.edukate.edukate.dto.about.AboutParagraphDto;
-import com.az.edu.edukate.edukate.dto.banner.BannerDto;
+import com.az.edu.edukate.edukate.dto.course.CourseDto;
 import com.az.edu.edukate.edukate.service.AboutParagraphService;
 import com.az.edu.edukate.edukate.service.BannerService;
+import com.az.edu.edukate.edukate.service.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,7 @@ import java.util.List;
 public class HomeController {
     private final BannerService bannerService;
     private final AboutParagraphService aboutParagraphService;
+    private final CourseService courseService;
 
     @GetMapping("/")
     public String home(Model model) {
@@ -39,6 +41,9 @@ public class HomeController {
     public String courses(Model model) {
 //        BannerDto bannerDto = bannerService.getBannerByPageId(3L);
 //        model.addAttribute("banner", bannerDto);
+        List<CourseDto> courseDtos = courseService.getAllCourses();
+        model.addAttribute("courseDtoList", courseDtos);
+
         model.addAttribute("activeMenu", "courses");
         return "course";
     }
