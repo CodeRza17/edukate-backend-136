@@ -54,7 +54,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6 pb-4" th:each="course : ${courseDtoList}">
-                    <a class="courses-list-item position-relative d-block overflow-hidden mb-2" href="detail.html">
+                    <a class="courses-list-item position-relative d-block overflow-hidden mb-2" th:href="'course-detail/'+${course.id}">
                         <img class="img-fluid" th:src="${course.imageUrl}" src="img/courses-1.jpg" alt="">
                         <div class="courses-text">
                             <h4 class="text-center text-white px-3" th:text="${course.name}">Web design & development courses for beginners</h4>

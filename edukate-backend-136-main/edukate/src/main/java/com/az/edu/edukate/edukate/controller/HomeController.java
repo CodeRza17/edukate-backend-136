@@ -1,6 +1,7 @@
 package com.az.edu.edukate.edukate.controller;
 
 import com.az.edu.edukate.edukate.dto.about.AboutParagraphDto;
+import com.az.edu.edukate.edukate.dto.course.CourseDetailDto;
 import com.az.edu.edukate.edukate.dto.course.CourseDto;
 import com.az.edu.edukate.edukate.service.AboutParagraphService;
 import com.az.edu.edukate.edukate.service.BannerService;
@@ -78,5 +79,11 @@ public class HomeController {
 //        model.addAttribute("banner", bannerDto);
         model.addAttribute("activeMenu", "pages");
         return "testimonial";
+    }
+    @GetMapping("/course-detail/{id}")
+    public String detail(Model model, @PathVariable Long id) {
+        CourseDetailDto courseDetailDto = courseService.getCourseById(id);
+        model.addAttribute("detailDto", courseDetailDto);
+        return "detail";
     }
 }
