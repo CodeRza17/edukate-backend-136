@@ -84,6 +84,10 @@ public class HomeController {
     public String detail(Model model, @PathVariable Long id) {
         CourseDetailDto courseDetailDto = courseService.getCourseById(id);
         model.addAttribute("detailDto", courseDetailDto);
+
+        List<CourseDto> relatedCourses = courseService.getRelatedCourses(id);
+        model.addAttribute("relatedCourses", relatedCourses);
         return "detail";
     }
+
 }

@@ -9,4 +9,6 @@ public interface CourseService {
     List<CourseDto> getAllCourses();
 
     CourseDetailDto getCourseById(Long id);
+
+    List<CourseDto> getRelatedCourses(Long id);
 }

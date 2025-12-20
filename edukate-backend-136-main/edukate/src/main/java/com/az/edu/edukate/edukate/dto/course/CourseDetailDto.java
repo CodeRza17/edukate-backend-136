@@ -1,5 +1,6 @@
 package com.az.edu.edukate.edukate.dto.course;
 
+import com.az.edu.edukate.edukate.dto.category.CourseDetailCategoryDto;
 import lombok.*;
 
 import java.util.List;
@@ -22,5 +23,5 @@ public class CourseDetailDto {
     private String levelName;
     private String languageName;
     private Double coursePrice;
-    private List<String> categoriesNames;
+    private List<CourseDetailCategoryDto> categoriesNames;
 }
