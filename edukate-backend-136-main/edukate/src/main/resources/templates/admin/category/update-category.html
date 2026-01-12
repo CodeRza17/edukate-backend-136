@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{admin/layout}">
+<head>
+  <meta charset="UTF-8">
+  <title>Kateqoriya Yenilə</title>
+</head>
+<body>
+
+<div layout:fragment="content" class="container mt-4">
+
+  <h2 class="mb-4">Kateqoriya Yenilə</h2>
+
+  <form th:action="@{/dashboard/category/update/{id}(id=${categoryDashboardDto.id})}"
+        method="post"
+        class="col-md-6">
+
+    <div class="mb-3">
+      <label for="name" class="form-label">Kateqoriya adı</label>
+      <input type="text"
+             id="name"
+             name="name"
+             th:value="${categoryDashboardDto.name}"
+             class="form-control"
+             placeholder="Kateqoriya adını daxil edin"
+             required>
+    </div>
+
+    <div class="d-flex gap-2">
+      <button type="submit" class="btn btn-primary">
+        Yenilə
+      </button>
+
+      <a th:href="@{/dashboard/category}" class="btn btn-secondary">
+        Ləğv et
+      </a>
+    </div>
+
+  </form>
+
+</div>
+
+</body>
+</html>

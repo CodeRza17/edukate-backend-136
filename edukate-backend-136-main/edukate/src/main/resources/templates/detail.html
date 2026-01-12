@@ -62,7 +62,7 @@
 
                     <h2 class="mb-3">Related Courses</h2>
                     <div class="owl-carousel related-carousel position-relative" style="padding: 0 30px;">
-                        <a th:each="relatedCourse : ${relatedCourses}" class="courses-list-item position-relative d-block overflow-hidden mb-2" href="detail.html">
+                        <a th:each="relatedCourse : ${relatedCourses}" class="courses-list-item position-relative d-block overflow-hidden mb-2" th:href="${relatedCourse.id}">
                             <img th:src="${relatedCourse.imageUrl}" class="img-fluid" src="img/courses-1.jpg" alt="">
                             <div class="courses-text">
                                 <h4 th:text="${relatedCourse.name}" class="text-center text-white px-3">Web design & development courses for beginners</h4>
